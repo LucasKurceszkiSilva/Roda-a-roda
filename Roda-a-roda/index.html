@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="css/master.css" />
+    <script src="js/jquery-3.5.1.js"></script>   
+    <script src="js/bootstrap.min.js"></script> 
+    <title>Roda a roda</title>
+</head>
+<body>
+   <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8 backscreen">
+                <div class="letterboard">
+                    <span class="letterbox" id="letterbox">
+                        
+                    </span>
+                </div>
+                <span class="tema" id="tema">
+                    
+                </span>
+                <div class="boardback">
+                    <div class="board-border">
+                        <div class="board">
+                            <div class="boardline1">
+                                <span class="square blue" id="square-1"></span>
+                                <span class="square blue" id="square-2"></span>
+                                <span class="square blue" id="square-3"></span>
+                                <span class="square blue" id="square-4"></span>
+                                <span class="square blue" id="square-5"></span>
+                                <span class="square blue" id="square-6"></span>
+                                <span class="square blue" id="square-7"></span>
+                                <span class="square blue" id="square-8"></span>
+                                <span class="square blue" id="square-9"></span>
+                                <span class="square blue" id="square-10"></span>
+                            </div>
+                            <div class="boardline2">
+                                <span class="square blue" id="square-11"></span>
+                                <span class="square blue" id="square-12"></span>
+                                <span class="square blue" id="square-13"></span>
+                                <span class="square blue" id="square-14"></span>
+                                <span class="square blue" id="square-15"></span>
+                                <span class="square blue" id="square-16"></span>
+                                <span class="square blue" id="square-17"></span>
+                                <span class="square blue" id="square-18"></span>
+                                <span class="square blue" id="square-19"></span>
+                                <span class="square blue" id="square-20"></span>
+                                <span class="square blue" id="square-21"></span>
+                                <span class="square blue" id="square-22"></span>
+                            </div>
+                            <div class="boardline2">
+                                <span class="square blue" id="square-23"></span>
+                                <span class="square blue" id="square-24"></span>
+                                <span class="square blue" id="square-25"></span>
+                                <span class="square blue" id="square-26"></span>
+                                <span class="square blue" id="square-27"></span>
+                                <span class="square blue" id="square-28"></span>
+                                <span class="square blue" id="square-29"></span>
+                                <span class="square blue" id="square-30"></span>
+                                <span class="square blue" id="square-31"></span>
+                                <span class="square blue" id="square-32"></span>
+                                <span class="square blue" id="square-33"></span>
+                                <span class="square blue" id="square-34"></span>
+                            </div>
+                            <div class="boardline1">
+                                <span class="square blue" id="square-35"></span>
+                                <span class="square blue" id="square-36"></span>
+                                <span class="square blue" id="square-37"></span>
+                                <span class="square blue" id="square-38"></span>
+                                <span class="square blue" id="square-39"></span>
+                                <span class="square blue" id="square-40"></span>
+                                <span class="square blue" id="square-41"></span>
+                                <span class="square blue" id="square-42"></span>
+                                <span class="square blue" id="square-43"></span>
+                                <span class="square blue" id="square-44"></span>
+                            </div>                            
+                        </div>  
+                    </div>
+                </div>
+                <div class="userboard">
+                    <div class="userletter">
+                        <span>DIGITE A LETRA</span>
+                        <span><input type="text" class="form-control" id="inputletter" maxlength="1"><button class="btn" id="inputsend">Enviar</button></span>
+                    </div>
+                    <div class="userscore">
+                        <span>PONTUAÇÃO</span>
+                        <span id="score" class="score">R$ 0</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 bg-dark col-sm-12 backroda">
+                <div class="roleta-container">
+                    <div class="meio"></div>
+                    <div class="indicador">
+                        <div class="indicador2"></div>
+                    </div>
+                    <div id="roleta" class="roleta">
+                        <div class="secao" style="background-color: #c83939;--i:0;"><span>R$ 1000</span></div>
+                        <div class="secao" style="background-color: #43c943;--i:1"><span>R$ 200</span></div>
+                        <div class="secao" style="background-color: #4242c4;--i:2"><span>R$ 10</span></div>
+                        <div class="secao" style="background-color: #f6f62c;--i:3"><span>R$ 300</span></div>
+                        <div class="secao" style="background-color: #ce37ce;--i:4"><span>R$ 500</span></div>
+                        <div class="secao" style="background-color: #3ccdcd;--i:5"><span>R$ 600</span></div>
+                        <div class="secao" style="background-color: #000000;--i:6"><span>Perdeu tudo!</span></div>
+                        <div class="secao" style="background-color: #cf369c;--i:7"><span>R$ 50</span></div>
+                        <div class="secao" style="background-color: #eb9a30;--i:7"><span>R$ 750</span></div>
+                    </div>
+                </div>
+                <button class="btn btn-primary" id="girar">Girar a roleta</button>
+                <div class="output">
+                    <span id="spanroleta"></span>
+                </div>
+                <span id="debug" style="color:aliceblue"></span>
+            </div>
+        </div>
+   </div>
+</body>
+<script>
+    let rodaARoda = [
+  ["FRUTAS", "MANGA", "BANANA", "LARANJA"],
+  ["ANIMAIS", "LEAO", "ELEFANTE", "GIRAFA"],
+  ["CORES", "AZUL", "VERMELHO", "AMARELO"],
+  ["FILMES", "TITANIC", "VINGADORES", "LORAX"], 
+  ["CIDADES", "PARIS", "CAMPINAS", "SANTOS"],
+  ["ESPORTES", "FUTEBOL", "BASQUETE", "VOLEI"],
+  ["PAÍSES", "BRASIL", "JAPAO", "CONGO"],
+  ["COMIDAS", "PIZZA", "HAMBURGUER", "SUSHI"],
+  ["INSTRUMENTOS MUSICAIS", "VIOLAO", "PIANO", "BATERIA"],
+  ["MARCAS", "COCACOLA", "NIKE", "APPLE"],
+  ["CARROS", "MCLAREN", "FERRARI", "BMW"],
+  ["FLORES", "ROSA", "MARGARIDA", "TULIPA"],
+  ["PERSONAGENS DE DESENHO", "MICKEY", "PIKACHU", "PATRICK"],
+  ["SUPER-HERÓIS", "BATMAN", "SUPERMAN", "HULK"],
+  ["TECNOLOGIA", "SMARTPHONE", "COMPUTADOR", "TABLET"],
+  ["PRINCESAS", "CINDERELA", "RAPUNZEL", "MULAN"],
+  ["JOGOS DE VIDEOGAME", "MARIO", "ZELDA", "FORTNITE"],
+  ["AVENTURAS", "ESCALADA", "MERGULHO", "CAMINHADA"],
+  ["CIENTISTAS", "EINSTEIN", "NEWTON", "GALILE  U"],
+  ["CARNE", "FRANGO", "BIFE", "PEIXE"],
+  ["VEGETAIS", "CENOURA", "BATATA", "ALFACE"],
+  ["ROUPAS", "CAMISETA", "BERMUDA", "SAPATO"],
+  ["TECNOLOGIA", "INTERNET", "WIFI", "BLUETOOTH"],
+  ["EGITO", "FARAO", "PIRAMIDE", "CATARATAS"],
+  ["INVENÇÕES", "TELEFONE", "LAMPADA", "AVIAO"],
+  ["VINHOS", "TINTO", "BRANCO", "ESPUMANTE"],
+  ["ARTE", "PINTURA", "ESCULTURA", "DESENHO"],
+  ["CONTOS", "LOBO", "FADA", "PRINCESA"],
+  ["JOGOS DE TABULEIRO", "XADREZ", "DAMAS", "MONOPOLY"],
+  ["COMPUTADORES", "WINDOWS", "MAC", "LINUX"],
+  ["RELIGIÕES", "JUDAISMO", "ISLAMISMO", "BUDISMO"],
+  ["ESCRITÓRIO", "CANETA", "LAPIS", "CADERNO"],
+  ["ANIMAIS MARINHOS", "GOLFINHO", "BALEIA", "TUBARAO"],
+  ["ROEDORES", "RATO", "ESQUILO", "CASTOR"],
+  ["PÁSSAROS", "PAPAGAIO", "TUCANO", "AGUIA"],
+  ["PÁSSAROS", "COLIBRI", "POMBO", "FALCAO"],
+  ["CIÊNCIAS", "BIOLOGIA", "QUIMICA", "FISICA"],
+  ["MARÍTIMOS", "NAVIO", "IATE", "PORTO"],
+  ["JOGOS DE CARTAS", "POKER", "TRUCO", "BATALHA"],
+  ["ESTILOS DE MUSICA", "ROCK", "JAZZ", "CLASSICA"],
+  ["ELEMENTOS QUIMICOS", "OXIGENIO", "HIDROGENIO", "CARBONO"]
+];
+    let valueid=document.getElementById('valueid');
+    let rotid=document.getElementById('rotid');
+    let tema=document.getElementById('tema');
+    let roda=document.getElementById('roleta');
+    let girar=document.getElementById('girar');
+    let spanroleta=document.getElementById('spanroleta');
+    let value=0;
+    let inputletter=document.getElementById('inputletter');
+    let inputsend=document.getElementById('inputsend');
+    let letterbox=document.getElementById('letterbox');
+    let score=document.getElementById('score');
+    let letrasacertadas=0;
+    scorevalue=0;
+    letterbox.innerText='';
+    inputletter.disabled=true;
+    inputletter.style.filter='opacity(0.4)';
+    inputsend.disabled=true;
+    inputsend.style.filter='opacity(0.4)';
+
+    let debug = document.getElementById('debug');
+
+    let valoratual=0;
+
+    let numeroSorteado = Math.floor(Math.random() * 41);
+    tema.innerText=rodaARoda[numeroSorteado][0];
+    let palavra1=rodaARoda[numeroSorteado][1];
+    let palavra2=rodaARoda[numeroSorteado][2];
+    let palavra3=rodaARoda[numeroSorteado][3];
+
+    let vetor = new Array(44).fill('');
+    for (let i = 0; i < palavra1.length; i++) {
+        vetor[i] = palavra1[i];
+    }
+    
+    for (let i = 0; i < palavra2.length; i++) {
+        vetor[11 + i] = palavra2[i];
+    }
+
+    for (let i = 0; i < palavra3.length; i++) {
+        vetor[23 + i] = palavra3[i];
+    }
+
+    let palavra1size=palavra1.length;
+    let palavra2size=palavra2.length;
+    let palavra3size=palavra3.length;
+
+    let letrastotais=palavra1size+palavra2size+palavra3size;
+
+    for(i=1;i<palavra1size+1;i++){
+        let square=document.getElementById('square-'+i);
+        square.classList.remove('blue');
+        square.classList.add('white');
+    }
+    for(i=12;i<palavra2size+12;i++){
+        let square=document.getElementById('square-'+i);
+        square.classList.remove('blue');
+        square.classList.add('white');
+    }
+    for(i=24;i<palavra3size+24;i++){
+        let square=document.getElementById('square-'+i);
+        square.classList.remove('blue');
+        square.classList.add('white');
+    }
+
+    girar.onclick=function girarRoleta(){
+        value+=Math.ceil(Math.random()*3600);
+        girar.disabled = true;
+        girar.style.filter='opacity(0.4)';
+        roda.style.transform='rotate('+value+'deg)';
+        roda.style.transition='transform 5s ease-in-out';
+        setTimeout(function() {
+                rot=value%360;
+                debug.innerText="grau:"+rot;
+                if(rot<24||rot>=339){
+                    valor="200";
+                }else if(rot>=24&&rot<67){
+                    valor="1000";
+                }else if(rot>=68&&rot<113){
+                    valor="750";
+                }else if(rot>=114&&rot<158){
+                    valor="0";
+                }else if(rot>=159&&rot<203){
+                    valor="600";
+                }else if(rot>=204&&rot<248){
+                    valor="500";
+                }else if(rot>=249&&rot<293){
+                    valor="300";
+                }else if(rot>=294&&rot<338){
+                    valor="10";
+                }
+                if(valor==0){
+                    spanroleta.innerText="VOCÊ PERDEU TUDO!";
+                    girar.disabled = false;
+                    scorevalue=0;
+                    score.innerText='R$ 0';
+                    girar.style.filter='opacity(1)';
+                }else{
+                    spanroleta.innerText="UMA LETRA VALE RS "+valor+" REAIS";
+                    valoratual=valor;
+                    inputletter.disabled=false;
+                    inputletter.style.filter='opacity(1)';
+                    inputsend.disabled=false;
+                    inputsend.style.filter='opacity(1)';    
+                }
+        }, 5000);
+    }
+
+    inputsend.onclick=function(){
+        if(/^[a-zA-Z]$/.test(inputletter.value)==true){
+            let letra=inputletter.value.toUpperCase();
+            letterbox.innerText+=letra;
+            inputsend.disabled=true;
+            spanroleta.innerText='';
+            inputsend.style.filter='opacity(0.4)';
+            inputletter.value='';
+            inputletter.disabled=true;
+            inputletter.style.filter='opacity(0.4)';
+            for(i=0;i<44;i++){
+                if(vetor[i]==letra){
+                    scorevalue+=parseInt(valoratual);
+                    let square=document.getElementById('square-'+(i+1));
+                    square.classList.remove('white');
+                    square.classList.add('yellow');
+                }
+            }
+            let j=500;
+            setTimeout(function(){
+                for(let i=0;i<44;i++){
+                let square=document.getElementById('square-'+(i+1));
+                if(square.classList.contains('yellow')){
+                    setTimeout(function(){
+                        square.innerText=vetor[i];
+                        square.classList.add('white');
+                        square.classList.remove('yellow');
+                        letrasacertadas++;
+                    },j);
+                    j+=1000;
+                }
+            }
+            },1000);
+            girar.disabled=false;
+            girar.style.filter='opacity(1)';
+        }else{
+            alert('Digite uma letra válida!');
+        }
+        score.innerText='R$ '+scorevalue;
+        setTimeout(function(){if(letrasacertadas==letrastotais){
+            window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+        }},3000);
+    }
+    
+</script>
+</html>
